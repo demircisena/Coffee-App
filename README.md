@@ -21,6 +21,19 @@ and when you want to run this project
 npx expo start
 ```
 
+If you want to sync your clone with the original repo automatically:
+<br>
+
+```
+git remote add upstream https://github.com/mustafadede/Coffee-App.git
+```
+
+```
+git pull upstream master
+```
+
+<br>
+
 <br>
 
 ![README](./assets/readme-images/readme.png)
