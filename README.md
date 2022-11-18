@@ -5,9 +5,9 @@
 This is a Coffee app written with React Native.
 <br>
 
-## How can I run the projectin my pc ?
+## How can I run the project in my pc ?
 
-When you clone the project in your personal computer, you should run this command
+When you want to clone the project in your personal computer, you should run this command
 <br>
 
 ```
@@ -23,4 +23,5 @@ npx expo start
 
 <br>
 
-![README](./readme.png)
+![README](./assets/readme-images/readme.png)
+![README-PHOTO-1](./assets/readme-images/readme_2.png)
