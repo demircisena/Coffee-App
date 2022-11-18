@@ -6,5 +6,4 @@ export const theme1 = {
   yellow: "#F6B545",
   white: "#FFFFFF",
   black: "#222222",
-  
 };

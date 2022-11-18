@@ -15,12 +15,14 @@ const Orders = () => {
             <Text>image</Text>
           </View>
         </View>
-        <TextInput style={styles.text_input} placeholder="Search for drinks" ></TextInput>
+        <TextInput
+          style={styles.text_input}
+          placeholder="Search for drinks"
+        ></TextInput>
       </View>
       <View style={styles.orders_items}>
         <OrdersCard />
       </View>
-
     </View>
   );
 };
