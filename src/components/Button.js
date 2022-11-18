@@ -14,7 +14,7 @@ const Button = ({ onClickHandler }) => {
       }}
       onPress={onClickHandler}
     >
-      <Text style={{ color: theme1.white }}>Login</Text>
+      <Text style={{ color: theme1.white }}>Login!</Text>
     </TouchableOpacity>
   );
 };
