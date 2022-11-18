@@ -81,22 +81,22 @@ function MyTabs() {
 function Navigation() {
   return (
     <NavigationContainer>
-      <Stack.Navigator>
+      <Stack.Navigator
+        screenOptions={{ headerShown: false }}
+        initialRouteName="Main"
+      >
         <Stack.Screen
           name="Login"
           component={Login}
-          options={{
-            headerShown: false,
-          }}
         />
         <Stack.Screen
           name="Main"
           component={MyTabs}
-          options={{
-            headerShown: false,
-          }}
         />
-        <Stack.Screen name="Details" component={Details} />
+        <Stack.Screen
+          name="Details"
+          component={Details}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );
