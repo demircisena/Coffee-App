@@ -29,7 +29,7 @@ git remote add upstream https://github.com/mustafadede/Coffee-App.git
 ```
 
 ```
-git pull upstream master
+git pull upstream main
 ```
 
 <br>
