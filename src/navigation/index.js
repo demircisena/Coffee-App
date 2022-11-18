@@ -21,6 +21,7 @@ function MyTabs() {
   return (
     <Tab.Navigator
       screenOptions={{
+        tabBarHideOnKeyboard: true,
         tabBarStyle: {
           borderTopWidth: 0,
         },
@@ -85,18 +86,9 @@ function Navigation() {
         screenOptions={{ headerShown: false }}
         initialRouteName="Main"
       >
-        <Stack.Screen
-          name="Login"
-          component={Login}
-        />
-        <Stack.Screen
-          name="Main"
-          component={MyTabs}
-        />
-        <Stack.Screen
-          name="Details"
-          component={Details}
-        />
+        <Stack.Screen name="Login" component={Login} />
+        <Stack.Screen name="Main" component={MyTabs} />
+        <Stack.Screen name="Details" component={Details} />
       </Stack.Navigator>
     </NavigationContainer>
   );
