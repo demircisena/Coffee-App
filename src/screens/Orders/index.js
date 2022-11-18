@@ -4,7 +4,7 @@ import styles from "./style";
 const Orders = () => {
   return (
     <View style={styles.container}>
-      <Text>Orders</Text>
+      <Text>Started Orders</Text>
     </View>
   );
 };
