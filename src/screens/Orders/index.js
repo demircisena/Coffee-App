@@ -1,10 +1,12 @@
-import { View, Text, TextInput } from "react-native";
+import { View, Text, TextInput, ScrollView, } from "react-native";
 import React from "react";
 import styles from "./style";
 import OrdersCard from "../../components/OrdersCard";
-const Orders = () => {
+
+const Orders = ({navigation}) => {
   return (
-    <View style={styles.container}>
+    <ScrollView style={styles.scroll}>
+      <View style={styles.container}>
       <View style={styles.container_search}>
         <View style={styles.container_header} flexDirection="row">
           <View style={styles.container_header_text}>
@@ -21,9 +23,19 @@ const Orders = () => {
         ></TextInput>
       </View>
       <View style={styles.orders_items}>
-        <OrdersCard />
+        <OrdersCard onClickHandler={()=>{navigation.navigate("Details")}}/>
+        <OrdersCard onClickHandler={()=>{navigation.navigate("Details")}}/>
+        <OrdersCard onClickHandler={()=>{navigation.navigate("Details")}}/>
+        <OrdersCard onClickHandler={()=>{navigation.navigate("Details")}}/>
+        <OrdersCard onClickHandler={()=>{navigation.navigate("Details")}}/>
+        <OrdersCard onClickHandler={()=>{navigation.navigate("Details")}}/>
+      
       </View>
     </View>
+
+    </ScrollView>
+    
+
   );
 };
 
