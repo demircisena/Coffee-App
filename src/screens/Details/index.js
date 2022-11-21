@@ -1,9 +1,11 @@
-import { Text, Image, View, ScrollView, TextInput } from "react-native";
+import { Text, Image, View, ScrollView, TextInput, TouchableOpacity } from "react-native";
 import React from "react";
 import styles from "./styles";
 import Line from "../../components/Line";
 import Checkbox from 'expo-checkbox';
 import { theme1 } from "../../theme";
+
+import { Entypo } from '@expo/vector-icons'; 
 
 const Details = () => {
 
@@ -52,7 +54,7 @@ const Details = () => {
           </View>
         </View>
         <Line />
-        <View style={styles.topping_container}>
+        <View>
           <Text style={styles.topping_title}>Toppings</Text>
           <View style={styles.topping_content}>
             <View style={styles.checkbox}>
@@ -81,12 +83,44 @@ const Details = () => {
             Do you have another request?
           </Text>
           <TextInput
+            textAlignVertical="top"
             style={styles.note}
             placeholder="Note..."
             multiline={true}
           />
         </View>
         <Line />
+        <View style={styles.quantity_container}>
+          <Text style={styles.quantity_title}>Quantity</Text>
+          <View style={styles.quantity_content}>
+            <TouchableOpacity>
+              <Text style={styles.quantity_info}>-</Text>
+            </TouchableOpacity>
+            <Text style={styles.quantity_info}>1</Text>
+            <TouchableOpacity>
+              <Text style={styles.quantity_info}>+</Text>
+            </TouchableOpacity>
+          </View>
+        </View>
+        <Line />
+        <View style={styles.price_container}>
+          <View style={styles.price_content}>
+            <Text style={styles.price_title}>Price</Text>
+            <View style={styles.price_info}>
+              <Text style={styles.main_price}>$7.50</Text>
+              <Text style={styles.addition_price}>+$4.00</Text>
+              <Text style={styles.total_price}>$11.50</Text>
+            </View>
+          </View>
+          <View style={styles.price_buttons}>
+            <TouchableOpacity style={styles.order_button}>
+              <Text style={styles.button_text}>Add to order</Text>
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.cart_button}>
+              <Entypo name="shopping-cart" size={24} color="white" />
+            </TouchableOpacity>
+          </View>
+        </View>
       </ScrollView>
     </View>
   );

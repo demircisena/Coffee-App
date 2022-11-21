@@ -7,6 +7,7 @@ const Line = () => {
         style={{
             borderBottomWidth: 1,
             borderColor: theme1.lightBrown,
+            marginVertical: 25,
         }}
     ></View>
 };
