@@ -52,4 +52,4 @@ git pull upstream master
 <br>
 
 ![README](./assets/readme-images/readme.png)
-![README-PHOTO-1](./assets/readme-images/readme_2.png)
+![README-PHOTO-1](./assets/readme-images/readme_2.jpg)
