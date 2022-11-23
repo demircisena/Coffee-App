@@ -79,7 +79,10 @@ function MyTabs() {
 function Navigation() {
   return (
     <NavigationContainer>
-      <Stack.Navigator screenOptions={{ headerShown: false }}>
+      <Stack.Navigator
+        screenOptions={{ headerShown: false }}
+        initialRouteName="Main"
+      >
         <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="Main" component={MyTabs} />
         <Stack.Screen name="Details" component={Details} />
