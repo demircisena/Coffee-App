@@ -1,11 +1,56 @@
-import { StyleSheet } from "react-native";
+import { StyleSheet, Dimensions } from "react-native";
+import { theme1 } from "../../theme";
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
+  header: {
+    marginTop: Dimensions.get("screen").height * 0.08,
     alignItems: "center",
-    justifyContent: "center",
+  },
+  profileHead: {
+    marginTop: "5%",
+    alignItems: "center",
+    borderRadius: "5%",
+    borderColor: "black",
+  },
+  profilePic: {
+    width: 120,
+    height: 120,
+    borderRadius: 60,
+  },
+  input: {
+    width: "90%",
+    marginVertical: "4%",
+    backgroundColor: "#EBE1CE",
+    padding: "5%",
+    borderRadius: "4",
+    paddingHorizontal: "3%",
+    fontWeight: "200",
+    alignSelf: "center",
+  },
+  inputBox: {
+    width: "100%",
+    alignContent: "flex-start",
+  },
+  formbox: {
+    marginTop: "3%",
+  },
+  button: {
+    width: "90%",
+    alignItems: "center",
+    alignSelf: "center",
+    backgroundColor: theme1.lightBrown,
+    padding: "5%",
+  },
+  inputLabel: {
+    color: theme1.lightBrown,
+    marginStart: "5%",
+    fontWeight: "200",
+  },
+  headText: {
+    fontSize: 32,
+    color: theme1.lightBrown,
+    fontWeight: "400",
+    fontFamily: "Times New Roman",
   },
 });
 
