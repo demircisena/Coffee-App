@@ -3,13 +3,12 @@ import { theme1 } from "../../theme";
 
 const styles = StyleSheet.create({
   header: {
-    marginTop: Dimensions.get("screen").height * 0.08,
+    marginTop: "15%",
     alignItems: "center",
   },
   profileHead: {
     marginTop: "5%",
     alignItems: "center",
-    borderRadius: "5%",
     borderColor: "black",
   },
   profilePic: {
@@ -17,12 +16,29 @@ const styles = StyleSheet.create({
     height: 120,
     borderRadius: 60,
   },
+  insidebutton: {
+    flexDirection: "row",
+    width: "90%",
+    alignSelf: "center",
+    backgroundColor: "#EBE1CE",
+    marginVertical: "4%",
+    padding: "4%",
+    borderRadius: 4,
+  },
+  insidetText: {
+    flex: 2,
+    fontWeight: "200",
+  },
+  smallIcon: {
+    width: 20,
+    height: 20,
+  },
   input: {
     width: "90%",
     marginVertical: "4%",
     backgroundColor: "#EBE1CE",
     padding: "5%",
-    borderRadius: "4",
+    borderRadius: 4,
     paddingHorizontal: "3%",
     fontWeight: "200",
     alignSelf: "center",
@@ -50,7 +66,6 @@ const styles = StyleSheet.create({
     fontSize: 32,
     color: theme1.lightBrown,
     fontWeight: "400",
-    fontFamily: "Times New Roman",
   },
 });
 
