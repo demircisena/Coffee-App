@@ -39,6 +39,18 @@ git pull upstream main
 <br>
 
 <br>
+If you want to sync your clone with the original repo automatically:
+
+```
+git remote add upstream https://github.com/mustafadede/Coffee-App.git
+```
+
+```
+git pull upstream master
+```
+
+<br>
 
 ![README](./assets/readme-images/readme.png)
-![README-PHOTO-1](./assets/readme-images/readme_2.png)
+<br>
+![README-PHOTO-1](./assets/readme-images/readme_2.jpg)
