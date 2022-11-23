@@ -4,11 +4,14 @@ import styles from "./styles";
 import Line from "../../components/Line";
 import Checkbox from 'expo-checkbox';
 import { theme1 } from "../../theme";
-
-import { Entypo } from '@expo/vector-icons'; 
+import { Entypo } from "@expo/vector-icons";
+import { increment, decrement } from "../../redux/features/addOrder/addOrderSlice";
+import { useDispatch, useSelector } from "react-redux";
 
 const Details = () => {
-
+  const count = useSelector((state) => state.counter.value);
+  const dispatch = useDispatch();
+  const total = 7.5 * count + 4;
   return (
     <View style={styles.container}>
       <View style={styles.header_container}>
@@ -28,27 +31,19 @@ const Details = () => {
           <Text style={styles.coffee_size_title}>Size</Text>
           <View style={styles.coffee_size_wrapper}>
             <View style={styles.coffee_size}>
-              <Image source={require("../../../assets/images/coffee-size.png")}
-                style={styles.coffee_small_size}
-              />
+              <Image source={require("../../../assets/images/coffee-size.png")} style={styles.coffee_small_size} />
               <Text>Small</Text>
             </View>
             <View style={styles.coffee_size}>
-              <Image source={require("../../../assets/images/coffee-size.png")}
-                style={styles.coffee_medium_size}
-              />
+              <Image source={require("../../../assets/images/coffee-size.png")} style={styles.coffee_medium_size} />
               <Text>Medium</Text>
             </View>
             <View style={styles.coffee_size}>
-              <Image source={require("../../../assets/images/coffee-size.png")}
-                style={styles.coffee_large_size}
-              />
+              <Image source={require("../../../assets/images/coffee-size.png")} style={styles.coffee_large_size} />
               <Text>Large</Text>
             </View>
             <View style={styles.coffee_size}>
-              <Image source={require("../../../assets/images/coffee-size.png")}
-                style={styles.coffee_extralarge_size}
-              />
+              <Image source={require("../../../assets/images/coffee-size.png")} style={styles.coffee_extralarge_size} />
               <Text>Extra Large</Text>
             </View>
           </View>
@@ -58,20 +53,14 @@ const Details = () => {
           <Text style={styles.topping_title}>Toppings</Text>
           <View style={styles.topping_content}>
             <View style={styles.checkbox}>
-              <Checkbox
-                value={true}
-                color={true ? theme1.lightBrown : undefined}
-              />
+              <Checkbox value={true} color={true ? theme1.lightBrown : undefined} />
               <Text style={styles.topping_name}>Cheese</Text>
             </View>
             <Text>+$4.00</Text>
           </View>
           <View style={styles.topping_content}>
             <View style={styles.checkbox}>
-              <Checkbox
-                value={false}
-                color={true ? theme1.lightBrown : undefined}
-              />
+              <Checkbox value={false} color={true ? theme1.lightBrown : undefined} />
               <Text style={styles.topping_name}>Cream</Text>
             </View>
             <Text></Text>
@@ -79,25 +68,27 @@ const Details = () => {
         </View>
         <Line />
         <View style={styles.note_content}>
-          <Text style={styles.note_title}>
-            Do you have another request?
-          </Text>
-          <TextInput
-            textAlignVertical="top"
-            style={styles.note}
-            placeholder="Note..."
-            multiline={true}
-          />
+          <Text style={styles.note_title}>Do you have another request?</Text>
+          <TextInput textAlignVertical="top" style={styles.note} placeholder="Note..." multiline={true} />
         </View>
         <Line />
         <View style={styles.quantity_container}>
           <Text style={styles.quantity_title}>Quantity</Text>
           <View style={styles.quantity_content}>
-            <TouchableOpacity>
+            <TouchableOpacity
+              disabled={count <= 1 ? true : false}
+              onPress={() => {
+                dispatch(decrement());
+              }}
+            >
               <Text style={styles.quantity_info}>-</Text>
             </TouchableOpacity>
-            <Text style={styles.quantity_info}>1</Text>
-            <TouchableOpacity>
+            <Text style={styles.quantity_info}>{count}</Text>
+            <TouchableOpacity
+              onPress={() => {
+                dispatch(increment());
+              }}
+            >
               <Text style={styles.quantity_info}>+</Text>
             </TouchableOpacity>
           </View>
@@ -107,9 +98,9 @@ const Details = () => {
           <View style={styles.price_content}>
             <Text style={styles.price_title}>Price</Text>
             <View style={styles.price_info}>
-              <Text style={styles.main_price}>$7.50</Text>
+              <Text style={styles.main_price}>${7.5 * count}</Text>
               <Text style={styles.addition_price}>+$4.00</Text>
-              <Text style={styles.total_price}>$11.50</Text>
+              <Text style={styles.total_price}>${total}</Text>
             </View>
           </View>
           <View style={styles.price_buttons}>
