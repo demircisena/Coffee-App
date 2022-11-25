@@ -5,10 +5,9 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import HomeScreen from "../screens/HomeScreen";
 import Login from "../screens/Login";
 import Account from "../screens/Account";
-import Location from "../screens/Location";
 import Cart from "../screens/Cart";
-import Orders from "../screens/Orders";
-import { EvilIcons, FontAwesome, Feather, FontAwesome5 } from "@expo/vector-icons";
+import PaymentDone from "../screens/PaymentDone";
+import { EvilIcons, Feather, FontAwesome5 } from "@expo/vector-icons";
 import { theme1 } from "../theme";
 import Details from "../screens/Details";
 const Tab = createBottomTabNavigator();
@@ -37,29 +36,11 @@ function MyTabs() {
         }}
       />
       <Tab.Screen
-        name="Orders"
-        component={Orders}
-        options={{
-          tabBarIcon: ({ color }) => (
-            <FontAwesome name="bookmark-o" size={24} color={color} />
-          ),
-        }}
-      />
-      <Tab.Screen
         name="Home"
         component={HomeScreen}
         options={{
           tabBarIcon: ({ color, size }) => (
             <Feather name="coffee" size={size} color={color} />
-          ),
-        }}
-      />
-      <Tab.Screen
-        name="Location"
-        component={Location}
-        options={{
-          tabBarIcon: ({ color }) => (
-            <EvilIcons name="location" size={32} color={color} />
           ),
         }}
       />
@@ -79,13 +60,11 @@ function MyTabs() {
 function Navigation() {
   return (
     <NavigationContainer>
-      <Stack.Navigator
-        screenOptions={{ headerShown: false }}
-        initialRouteName="Main"
-      >
+      <Stack.Navigator screenOptions={{ headerShown: false }}>
         <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="Main" component={MyTabs} />
         <Stack.Screen name="Details" component={Details} />
+        <Stack.Screen name="PaymentDone" component={PaymentDone} />
       </Stack.Navigator>
     </NavigationContainer>
   );

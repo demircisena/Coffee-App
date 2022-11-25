@@ -4,7 +4,7 @@ import styles from "./style";
 import { SafeAreaView } from "react-native-safe-area-context";
 import Icon from "react-native-vector-icons/FontAwesome";
 
-const PaymentDone = () => {
+const PaymentDone = ({ navigation }) => {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.check}>
@@ -15,9 +15,9 @@ const PaymentDone = () => {
         <Text style={styles.message}>Please check the delivery status.</Text>
       </View>
 
-      <TouchableOpacity>
+      <TouchableOpacity onPress={() => navigation.navigate("Home")}>
         <View style={styles.button}>
-          <Text style={styles.buttonText}>Tracking Status</Text>
+          <Text style={styles.buttonText}>Home</Text>
         </View>
       </TouchableOpacity>
     </SafeAreaView>
